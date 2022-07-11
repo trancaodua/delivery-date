@@ -44,46 +44,27 @@ class LayoutProcessor
         \Magento\Checkout\Block\Checkout\LayoutProcessor $subject,
         array  $jsLayout
     ) {
-        $jsLayout['components']['checkout']['children']['steps']['children']['shipping-step']['children']
-        ['shippingAddress']['children']['before-form']['children']['delivery_date'] = [
-             'component' => 'Magento_Ui/js/form/element/abstract',
-            'config' => [
-                'customScope' => 'shippingAddress',
-                'template' => 'ui/form/field',
-                'elementTmpl' => 'ui/form/element/date',
-                'options' => [],
-                'id' => 'delivery-date'
-            ],
-            'dataScope' => 'shippingAddress.delivery_date',
-            'label' => 'Delivery Date',
-            'provider' => 'checkoutProvider',
-            'visible' => true,
-            'validation' => [
-                'required-entry' => true,
-            ],
-            'sortOrder' => 200,
-            'id' => 'delivery-date'
-        ];
-
-        
-            $jsLayout['components']['checkout']['children']['steps']['children']['billing-step']['children']
-            ['payment']['children']['payments-list']['children']['before-place-order']['children']['comment'] = [
-                'component' => 'Magento_Ui/js/form/element/textarea',
-                'config' => [
-                    'customScope' => 'shippingAddress',
-                    'template' => 'ui/form/field',
-                    'options' => [],
-                    'id' => 'comment'
-                ],
-                'dataScope' => 'ordercomment.comment',
-                'label' => 'Order Comment',
-                'notice' => __('Comments'),
-                'provider' => 'checkoutProvider',
-                'visible' => true,
-                'sortOrder' => 250,
-                'id' => 'comment'
-            ];
-        
+        // $jsLayout['components']['checkout']['children']['steps']['children']['shipping-step']['children']
+        // ['shippingAddress']['children']['before-form']['children']['delivery_date'] = [
+        //      'component' => 'Magento_Ui/js/form/element/abstract',
+        //     'config' => [
+        //         'customScope' => 'shippingAddress',
+        //         'template' => 'ui/form/field',
+        //         'elementTmpl' => 'ui/form/element/date',
+        //         'options' => [],
+        //         'id' => 'delivery-date',
+        //     ],
+        //     'dataScope' => 'shippingAddress.delivery_date',
+        //     'label' => 'Delivery Date',
+        //     'provider' => 'checkoutProvider',
+        //     'visible' => true,
+        //     'validation' => [
+        //         'required-entry' => true,
+        //     ],
+        //     'sortOrder' => 200,
+        //     'id' => 'delivery-date'
+        // ];
+                       
         return $jsLayout;
     }
     

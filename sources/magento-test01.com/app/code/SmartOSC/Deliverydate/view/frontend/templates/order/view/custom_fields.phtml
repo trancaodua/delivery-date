@@ -1,0 +1,24 @@
+<?php
+/** @var SmartOSC\Deliverydate\Block\Order\CustomFields $block */
+
+/** @var SmartOSC\Deliverydate\Model\Data\CustomFields $customFields */
+$customFields = $block->getCustomFields($block->getOrder());
+?>
+<?php if($customFields): ?>
+    <div class="block block-order-details-view">
+        <div class="block-content">
+            <div class="box">
+                <strong class="box-title"><span><?php /* @escapeNotVerified */ echo __('Other information') ?></span></strong>
+                <div class="box-content">
+                </div>
+            </div>
+
+            <div class="box">
+                <strong class="box-title"><span><?php /* @escapeNotVerified */ echo __('Comment') ?></span></strong>
+                <div class="box-content">
+                    <?php echo nl2br($this->escapeHtml($customFields->getCheckoutComment())); ?>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php endif; ?>

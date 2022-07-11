@@ -1,6 +1,9 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-    <type name="Magento\Checkout\Model\ShippingInformationManagement">
+    <!-- <type name="Magento\Checkout\Model\ShippingInformationManagement">
         <plugin name="save-in-quote" type="SmartOSC\Deliverydate\Plugin\Checkout\ShippingInformationManagement" sortOrder="10"/>
-    </type>
+    </type> -->
+    <preference for="SmartOSC\Deliverydate\Api\Data\CustomFieldsInterface" type="SmartOSC\Deliverydate\Model\Data\CustomFields" />
+    <preference for="SmartOSC\Deliverydate\Api\CustomFieldsRepositoryInterface" type="SmartOSC\Deliverydate\Model\CustomFieldsRepository" />
+    <preference for="SmartOSC\Deliverydate\Api\CustomFieldsGuestRepositoryInterface" type="SmartOSC\Deliverydate\Model\CustomFieldsGuestRepository" />
 </config>
